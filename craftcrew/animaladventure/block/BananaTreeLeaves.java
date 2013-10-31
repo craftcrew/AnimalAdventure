@@ -17,18 +17,12 @@ public class BananaTreeLeaves extends Block // implements IShearable
 
     public BananaTreeLeaves(int id, Material material) {
         super(id, material);
-        setStepSound(soundGrassFootstep);
 
-    }
-
-    public int idDropped(int metadata, Random random, int fortune) {
-
-        return ItemHandler.getBananaID();
     }
 
     public void dropBlockAsItemWithChance(World par1World, int par2, int par3, int par4, int par5, float par6, int par7) {
         if (!par1World.isRemote) {
-            int j1 = 20;
+            int j1 = 6;
 
             if ((par5 & 3) == 3) {
                 j1 = 40;
@@ -44,7 +38,7 @@ public class BananaTreeLeaves extends Block // implements IShearable
 
             if (par1World.rand.nextInt(j1) == 0) {
                 int k1 = this.idDropped(par5, par1World.rand, par7);
-                this.dropBlockAsItem_do(par1World, par2, par3, par4, new ItemStack(k1, 1, this.damageDropped(par5)));
+                this.dropBlockAsItem_do(par1World, par2, par3, par4, new ItemStack(ItemHandler.banana, 1, 0));
             }
 
             j1 = 200;
@@ -56,9 +50,9 @@ public class BananaTreeLeaves extends Block // implements IShearable
                     j1 = 40;
                 }
             }
-
+//TODO Add new rare Item to drop
             if ((par5 & 3) == 0 && par1World.rand.nextInt(j1) == 0) {
-                this.dropBlockAsItem_do(par1World, par2, par3, par4, new ItemStack(Item.appleRed, 1, 0));
+                this.dropBlockAsItem_do(par1World, par2, par3, par4, new ItemStack(BlockHandler.bananaSeeds, 1, 0));
             }
         }
     }

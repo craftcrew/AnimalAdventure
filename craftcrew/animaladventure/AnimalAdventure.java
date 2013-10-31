@@ -15,7 +15,7 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 @Mod(modid = BasicInfo.ID, name = BasicInfo.NAME, version = BasicInfo.VERSION)
 @NetworkMod(clientSideRequired = true, serverSideRequired = false)
 public class AnimalAdventure {
-    
+
     @Instance("BasicInfo.NAME")
     public static AnimalAdventure instance;
     // Says where the client and server 'proxy' code is loaded.
@@ -30,14 +30,15 @@ public class AnimalAdventure {
         BlockHandler.configureBlocks(config);
         config.save();
         BlockHandler.registerBlocks(new GameRegistry());
-        ItemHandler.registerItems(new GameRegistry());
         BlockHandler.setNames(new LanguageRegistry());
-        ItemHandler.setNames(new LanguageRegistry() );
-        
+        ItemHandler.registerItems(new GameRegistry());
+        ItemHandler.setNames(new LanguageRegistry());
+        RecipeHandler.registerRecipes(new GameRegistry());
+
     }
 
     @EventHandler
-    public void init(FMLInitializationEvent event) {
+    public void load(FMLInitializationEvent event) {
     }
 
     @EventHandler
