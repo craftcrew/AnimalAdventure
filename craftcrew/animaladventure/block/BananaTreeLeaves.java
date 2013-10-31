@@ -50,7 +50,7 @@ public class BananaTreeLeaves extends Block // implements IShearable
                     j1 = 40;
                 }
             }
-//TODO Add new rare Item to drop
+            // TODO Add new rare Item to drop
             if ((par5 & 3) == 0 && par1World.rand.nextInt(j1) == 0) {
                 this.dropBlockAsItem_do(par1World, par2, par3, par4, new ItemStack(BlockHandler.bananaSeeds, 1, 0));
             }

@@ -16,7 +16,6 @@ public class BananaTreeLog extends Block {
     public BananaTreeLog(int id, Material material) {
         super(id, material);
     }
-  
 
     @SideOnly(Side.CLIENT)
     public static Icon topIcon;

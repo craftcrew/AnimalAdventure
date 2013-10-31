@@ -9,11 +9,6 @@ public class Banana extends ItemFood {
 
     public Banana(int id, int par2, float par3, boolean par4) {
         super (id, par2, par3, par4);
-        setMaxStackSize(16);
-        setCreativeTab(CreativeTabs.tabFood);
-        setUnlocalizedName("banana");
-        setTextureName(BasicInfo.NAME.toLowerCase() + ":banana");
-        
     }
     
 

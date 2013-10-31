@@ -13,7 +13,7 @@ public class ItemHandler {
     
     public static void configureItems(Configuration config) {
         //TODO reorder .set methods out of the itemclasses in the itemhandler class
-        banana = new Banana(config.get("Items", "Banana", 9700).getInt(), 0, 0, false);
+        banana = new Banana(config.get("Items", "Banana", 9700).getInt(), 4, 0.3F, false).setCreativeTab(CreativeTabs.tabFood).setUnlocalizedName("banana").setMaxStackSize(16).setTextureName(BasicInfo.NAME.toLowerCase() + ":banana");
     }
     
     public static void registerItems(GameRegistry registry) {
